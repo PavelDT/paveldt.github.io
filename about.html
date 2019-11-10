@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About page describing the tutorial website.">
+    <title>IDE Tutorials</title>
+
+    <!-- links to resources -->
+    <link rel="icon" href="img/icon.png">
+    <link rel="stylesheet" href="css/pure.css">
+    <link rel="stylesheet" href="css/grids-responsive-min.css">
+    <link rel="stylesheet" href="css/tutorial-light.css">
+    <!-- jQuerry used as javascript library to make page more dynamic -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/tutorial.js"></script>
+</head>
+<body>
+
+<div id="layout" class="pure-g">
+    <!-- This is the sidebar based Menu -->
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
+        <div class="pure-menu menu">
+            <h1 class="menu-title">IDE Tutorials</h1>
+            <h2 class="menu-description">Straight-forward tutorials for everyone</h2>
+
+            <nav>
+                <ul class="pure-menu-list">
+                  <li class="menu-subtitle">Navigation</li>
+                    <li><a href="index.html" class="pure-menu-link">Home</a></li>
+                    <li class="menu-subtitle">Latest 3 tutorials</li>
+                    <li><a href="intellij_idea.html" class="pure-menu-link">IntelliJ IDEA</a></li>
+                    <li><a href="online_gdb.html" class="pure-menu-link">Online GDB</a></li>
+                    <li><a href="eclipse.html" class="pure-menu-link">Eclipse</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="content pure-u-1 pure-u-md-3-4">
+
+        <!-- used to show / hide the sidebar -->
+        <button id="toggle-menu" class="button-xsmall pure-button">Hide Menu</button>
+        <button id="dark-mode" class="button-xsmall pure-button">Dark Mode</button>
+
+        <div class="tutorial-content">
+            <!-- A wrapper for all the tutorials -->
+            <h1 class="">About IDE Tutorials</h1>
+            <p>
+              This website shows a number of web tutorials I've found to be very useful during my studies.
+              Hopefully they can help others too!
+            </p>
+
+            <div class="footer">
+                <div class="pure-menu pure-menu-horizontal">
+                    <ul>
+                      <li class="pure-menu-item">
+                         <a href="about.html" class="pure-menu-link">About</a>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

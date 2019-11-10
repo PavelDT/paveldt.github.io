@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Timeline of latest tutorials available.">
+    <title>IDE Tutorials</title>
+
+    <!-- links to resources -->
+    <link rel="icon" href="img/icon.png">
+    <link rel="stylesheet" href="css/pure.css">
+    <link rel="stylesheet" href="css/grids-responsive-min.css">
+    <link rel="stylesheet" href="css/tutorial-light.css">
+    <!-- jQuerry used as javascript library to make page more dynamic -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/tutorial.js"></script>
+</head>
+<body>
+
+<div id="layout" class="pure-g">
+    <!-- This is the sidebar based Menu -->
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
+        <div class="pure-menu menu">
+            <h1 class="menu-title">IDE Tutorials</h1>
+            <h2 class="menu-description">Straight-forward tutorials for everyone</h2>
+
+            <nav>
+                <ul class="pure-menu-list">
+                    <li class="menu-subtitle">Navigation</li>
+                    <li><a href="index.html" class="pure-menu-link">Home</a></li>
+                    <li class="menu-subtitle">Latest 3 tutorials</li>
+                    <li><a href="intellij_idea.html" class="pure-menu-link">IntelliJ IDEA</a></li>
+                    <li><a href="online_gdb.html" class="pure-menu-link">Online GDB</a></li>
+                    <li><a href="eclipse.html" class="pure-menu-link">Eclipse</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="content pure-u-1 pure-u-md-3-4">
+
+        <!-- used to show / hide the sidebar -->
+        <button id="toggle-menu" class="button-xsmall pure-button">Hide Menu</button>
+        <button id="dark-mode" class="button-xsmall pure-button">Dark Mode</button>
+
+        <div>
+            <!-- A wrapper for all the tutorials -->
+            <div class="tutorials">
+                <h1 class="">Tutorial Timeline</h1>
+
+                <!-- Tutorial 1 -->
+                <section id="intellij" class="tutorial-item">
+                    <div class="tutorial-header">
+                        <h2 class=""><a href="intellij_idea.html">IntelliJ IDEA</a></h2>
+
+                        <p class="tutorial-details">
+                            Added by Pavel, tagged under <span class="tutorial-tag">IntelliJ</span> <span class="tutorial-tag">Java</span>
+                        </p>
+                    </div>
+
+                    <div class="tutorial-content">
+                        <p>
+                            IntelliJ IDEA is an integrated development environment written in Java for developing computer software. It is built and developed by JetBrains. This tutorial will demonstrate how to set up a new project and import the Apache Commons IO library using Maven. Maven is a build tool used for Java projects that allows users to import libraries from a online based repository known as the Central Repository. The Apache Commons IO library contains utility classes for file manipulation, stream implementations, and much more.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Tutorial 2 -->
+                <section id="online_gdb" class="tutorial-item">
+                    <div class="tutorial-header">
+                        <h2 class=""><a href="online_gdb.html">Online GDB</a></h2>
+
+                        <p class="tutorial-details">
+                            Added by Pavel, tagged under <span class="tutorial-tag">Web IDE</span> <span class="tutorial-tag">C++</span>
+                        </p>
+                    </div>
+
+                    <div class="tutorial-content">
+                        <p>
+                            OnlineGDB.com is an online compiler and debugger tool for C/C++ languages. It is world's first online IDE which gives
+                            debugging facility with embedded gdb debugger. This is very handy webapp for coders who loves coding in online IDE but
+                            faces unexpected crashes and tricky bugs in their code. OnlineGDB provides debugging power to such users to help them out.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- tutorial 3  -->
+                <section id="eclipse" class="tutorial-item">
+                    <div class="tutorial-header">
+                        <h2 class=""><a href="eclipse.html">Eclipse</a></h2>
+
+                        <p class="tutorial-details">
+                            Added by Pavel, tagged under <span class="tutorial-tag">Eclipse</span> <span class="tutorial-tag">Java</span>
+                        </p>
+                    </div>
+
+                    <div class="tutorial-content">
+                        <p>
+                            Eclipse is an integrated development environment used for building software. The IDE contains a base workspace that
+                            holds all the files created by Developers. Many plug-ins are available for customising the programming environment
+                            to a user's taste. Eclipse is written mostly in Java and its primary use is for developing Java applications. This
+                            is one of the most popular Java IDEs due to the vast array of extensions available to users.
+                        </p>
+                    </div>
+                </section>
+
+
+            </div>
+
+            <div class="footer">
+                <div class="pure-menu pure-menu-horizontal">
+                    <ul>
+                      <li class="pure-menu-item">
+                         <a href="about.html" class="pure-menu-link">About</a>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

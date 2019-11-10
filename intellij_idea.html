@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An IntelliJ tutorial about how to use Apache Commons IO library with Maven.">
+    <title>IDE Tutorials</title>
+
+    <!-- links to resources -->
+    <link rel="icon" href="img/icon.png">
+    <link rel="stylesheet" href="css/pure.css">
+    <link rel="stylesheet" href="css/grids-responsive-min.css">
+    <link rel="stylesheet" href="css/tutorial-light.css">
+    <!-- jQuerry used as javascript library to make page more dynamic -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/tutorial.js"></script>
+</head>
+<body>
+
+<div id="layout" class="pure-g">
+    <!-- This is the sidebar based Menu -->
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
+        <div class="pure-menu menu">
+            <h1 class="menu-title">IDE Tutorials</h1>
+            <h2 class="menu-description">Straight-forward tutorials for everyone</h2>
+
+            <nav>
+                <ul class="pure-menu-list">
+                  <li class="menu-subtitle">Navigation</li>
+                    <li><a href="index.html" class="pure-menu-link">Home</a></li>
+                    <li class="menu-subtitle">Latest 3 tutorials</li>
+                    <li><a href="intellij_idea.html" class="pure-menu-link">IntelliJ IDEA</a></li>
+                    <li><a href="online_gdb.html" class="pure-menu-link">Online GDB</a></li>
+                    <li><a href="eclipse.html" class="pure-menu-link">Eclipse</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="content pure-u-1 pure-u-md-3-4">
+
+        <!-- used to show / hide the sidebar -->
+        <button id="toggle-menu" class="button-xsmall pure-button">Hide Menu</button>
+        <button id="dark-mode" class="button-xsmall pure-button">Dark Mode</button>
+
+        <div class="tutorial-content">
+            <!-- A wrapper for all the tutorials -->
+            <h1 class="">IntelliJ IDEA</h1>
+            <p class="tutorial-details">
+                Added by Pavel, tagged under <span class="tutorial-tag">IntelliJ</span> <span class="tutorial-tag">Java</span>
+            </p>
+            <p>
+              IntelliJ IDEA is an integrated development environment written in Java for developing computer software.
+              It is built and developed by JetBrains. This tutorial will demonstrate how to set up a new project and import the
+              Apache Commons IO library using Maven. Maven is a build tool used for Java projects that allows users to import
+              libraries from a online based repository known as the Central Repository. The Apache Commons IO library contains utility
+              classes for file manipulation, stream implementations, and much more.
+            </p>
+
+            <h2 id="start">Start IntelliJ<a href="#start"><img alt="Link to Start" class="linkimg" height="32" width="32" src="img/link.png" /></a></h2>
+            <p>
+              Let's begin by starting IntelliJ, preferably in 64-bit mode but either 32 or 64 bits will work just fine. You can
+              do this by simply double-clicking the IntelliJ icon from the Desktop. If you have issues running IntelliJ check out
+              this <a target="_blank" href="https://www.youtube.com/watch?v=c0efB_CKOYo">tutorial by Jetbrains</a>, the IntelliJ creators, for some guidance.
+
+            </p>
+
+            <h2 id="create_proj">Create New Project<a href="#create_proj"><img alt="Link to Create Project" class="linkimg" height="32" width="32" src="img/link.png" /></a></h2>
+            <p>Once the IDE has started, select the "Create New Project" option.</p>
+            <img alt="Starting IntelliJ screenshot" height="210" width="500" src="img/start-ide.bmp" />
+            <br/>
+            <p>This will display a number of options. Select a Maven project and click next.</p>
+            <img alt="Selecting Maven as the type of project." height="500" width="500" src="img/maven.bmp" />
+
+            <h2 id="artifacts">Assign Group and Articat IDs<a href="#artifacts"><img alt="Link to Artifact and Group ID" class="linkimg" height="32" width="32" src="img/link.png" /></a></h2>
+            <p>
+              The groupId uniquely identifies your project across all projects in the Maven central repository. A group ID should follow Java's package name rules.
+              This means it starts with a reversed domain name you control. For example: "org.apache.maven" or "org.apache.commons". Maven does not enforce this rule.
+              There are many legacy projects that do not follow this convention and instead use single word group IDs. However, it will be difficult to get a new single
+              word group ID approved for inclusion in the Maven Central repository.
+            </p>
+            <p>
+              The artifactId is the name of the jar without version. If you created it, then you can choose whatever name you want with lowercase letters and no strange
+              symbols. If it's a third party jar, you have to take the name of the jar as it's distributed. For example "maven" or "commons-math".
+            </p>
+            <p>
+              Basically, be creative, the project id has to be unique if you want to publish your code as a library.
+            </p>
+            <img alt="Adding project id and artifact id to the new Maven project." height="370" width="500" src="img/ids.bmp" />
+
+            <h2 id="name_proj">Name Your Project<a href="#name_proj"><img alt="Link to Naming a Project" class="linkimg" height="32" width="32" src="img/link.png" /></a></h2>
+            <p>
+              The name of the project will be used for the local files created on the machine by IntelliJ. The project
+              can be renamed at a later stage if necessary. Pick something simple without emojis or symbols as these cause
+              compatibility issues between different operating systems.
+            </p>
+            <img alt="Naming the project." height="500" width="500" src="img/name.bmp" />
+
+            <h2 id="add_dependency">Add Apache Commons IO Dependency<a href="#add_dependency"><img alt="Link to Adding a Dependency" class="linkimg" height="32" width="32" src="img/link.png" /></a></h2>
+            <p>
+              Open the "pom.xml" file. The pom.xml file contains information of project and configuration information
+              for the maven to build the project such as dependencies, build directory etc. The "&lt;dependencies&gt;"
+              tag will have to be added to the file.
+            </p>
+            <p>
+              The dependency from Maven central for Apache Commons IO will be added inside of the &lt;dependencies&gt; tag.
+              This tutorial will target <a href="https://mvnrepository.com/artifact/commons-io/commons-io/2.5">versio 2.5</a> of the library.
+              The dependency is available below:
+            </p>
+            <!-- Code white-spacing matters due to the pre block, but placing code in pre is considered good semantics -->
+            <pre>
+<code class="language-markup">
+    &lt;!-- https://mvnrepository.com/artifact/commons-io/commons-io --&gt;
+    &lt;dependency&gt;
+        &lt;groupId>commons-io&lt;/groupId&gt;
+        &lt;artifactId>commons-io&lt;/artifactId&gt;
+        &lt;version>2.5&lt;/version&gt;
+    &lt;/dependency&gt;
+</code>
+            </pre>
+
+
+            <h2 id="create_class">Create a Class<a href="#create_class"><img alt="Link to Creating a class" class="linkimg" height="32" width="32" src="img/link.png" /></a></h2>
+            <p>
+              Select the folder where you wish to add the file, preferrably in "src/main/java". Right-click on the folder,
+              select "New" and click on "Java Class". Give the class a name and click "OK". This will create the class.
+            </p>
+
+            <h2 id="add_code">Write some Code<a href="#add_code"><img alt="Link to Adding Code" class="linkimg" height="32" width="32" src="img/link.png" /></a></h2>
+            <p>
+              Make sure to import the Apache Commons IO utility classes, some demo code is supplied below.
+            </p>
+            <pre>
+<code>
+import org.apache.commons.io.FileUtils;
+
+import java.io.File;
+import java.io.IOException;
+
+public class SimpleIO {
+    public static void main(String[] args) throws IOException {
+        File file = new File("simple.txt");
+        FileUtils.writeStringToFile(file, "This is some data...", "UTF8");
+    }
+}</code>
+            </pre>
+
+            <p>
+              Let's summarise the process.
+            </p>
+            <ol>
+              <li>Start IntelliJ</li>
+              <li>Select "Create New Project"</li>
+              <li>Select "Maven" and click Next</li>
+              <li>Give the project a GroupID and a ArtifactID, optionally assign a version to the project.</li>
+              <li>Name your project and optionally select it's location and select "Finish".</li>
+              <li>Add the Apache Commons IO dependency to "pom.xml" in the dependencies tag.</li>
+              <li>Create a new class that will be used for simple file manipulation.</li>
+              <li>Write a main function that will create a new file and write to it.</li>
+            </ol>
+
+
+            <div class="footer">
+                <div class="pure-menu pure-menu-horizontal">
+                    <ul>
+                      <li class="pure-menu-item">
+                         <a href="about.html" class="pure-menu-link">About</a>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

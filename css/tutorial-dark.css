@@ -1,0 +1,155 @@
+body { background-color: #333333; }
+h1 {
+  color: #FFFFFF;
+  font-size: 2em;
+}
+
+h2 {
+    font-size: 1.7em;
+    margin-bottom: 10px;
+}
+
+a {
+    /* remove the underscore, looks better */
+    text-decoration: none;
+    /* websafe light-blue colour*/
+    color: #FFFFFF;
+}
+/* Add underscore when hovering the link */
+a:hover {
+  text-decoration: underline;
+}
+/* Make link darker when clicking */
+a:active {
+  text-decoration: underline;
+  /* Websafe dark blue colour */
+  color: #006696;
+}
+
+button {
+  min-width: 130px;
+}
+
+.linkimg {
+  float: left;
+}
+
+/* Change colour of pure's menu links to fit the sidebar*/
+.pure-menu-link { color: #FFFFFF; }
+.pure-menu-link:hover { color: #000000; }
+.pure-menu-link:focus { color: #000000; }
+.pure-menu-link:active { color: #006696; }
+
+/* LAYOUT CSS */
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+.header {
+    text-align: center;
+    top: auto;
+    margin: 3em auto;
+}
+
+.sidebar {
+    background: #000000;
+    color: #FFFFFF;
+}
+
+.toggle-menu {
+    width: 250px;
+    height: 50px;
+    background: inherit;
+    border: none;
+    text-align: left;
+
+}
+
+.menu-title {
+    margin: 0;
+}
+
+.menu-description {
+    font-weight: 100;
+    font-size: 80%;
+    /* Websafe light-gray colour */
+    color: #C6C6C6;
+}
+
+.menu-subtitle {
+  padding: .5em 1em;
+  font-size:  1em;
+  color: gray;
+}
+
+.content {
+    padding: 2em 1em 0;
+}
+
+.tutorial-item {
+    padding-bottom: 2em;
+}
+
+.tutorial-content {
+    font-family: Georgia, "Cambria", serif;
+    color: #CCCCCC;
+    line-height: 1.8em;
+}
+.tutorial-details {
+    color: #999;
+    font-size: 90%;
+    margin: 0;
+}
+
+.tutorial-tag {
+    margin: 0 0.1em;
+    padding: 0.3em 1em;
+    color: #fff;
+    background: #999;
+    font-size: 80%;
+}
+
+.footer {
+    padding: 1em 0;
+}
+.footer a {
+    color: #ccc;
+    font-size: 80%;
+}
+.footer .pure-menu a:hover,
+.footer .pure-menu a:focus {
+    background: none;
+    color: #FFFFFF;
+}
+
+/* Wrap content and menu in @media to allow it to re-scale with screen size */
+@media (min-width: 48em) {
+    .content {
+        padding: 2em 3em 0;
+        margin-left: 25%;
+    }
+
+    .menu {
+        margin: 30% 50px;
+        text-align: right;
+    }
+
+    /* Use pure's grid but position the side-bar to be fixed */
+    .sidebar {
+        position: fixed;
+        /* this is a trick to make the menu stretch the entire page.*/
+        height: 100%;
+    }
+
+
+}
+
+.footer {
+    text-align: center;
+}
+
+.soon {
+  font-size: 300%;
+  color: #C0C0C0;
+}
